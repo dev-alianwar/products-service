@@ -1,11 +1,47 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
+    "allowJs": true,
     "module": "commonjs",
-    "esModuleInterop": true,
-    "target": "es6",
-    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "lib": [
+      "ESNext",
+      "DOM" // https://github.com/mtth/avsc/issues/219
+    ],
+    "target": "ES2018",
     "sourceMap": true,
-    "outDir": "build"
+    "outDir": "dist",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": [
+        "src/*"
+      ],
+      "@config": [
+        "config/default.ts"
+      ],
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      },
+      {
+        "transform": "typescript-is/lib/transform-inline/transformer"
+      }
+    ]
   },
-  "lib": ["es2015"]
+  "exclude": [
+    "node_modules/"
+  ],
+  "include": [
+    "src/*.ts",
+    "src/**/*.ts",
+    "config/default.ts",
+    "tests/**/*.ts"
+  ]
 }

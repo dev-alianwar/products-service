@@ -1,1 +1,6 @@
+# ignore build 
+build
+# ignore node modules 
 node_modules
+# ignore lock file
+yarn.lock

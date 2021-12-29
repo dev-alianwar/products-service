@@ -1,10 +1,12 @@
+import { startApolloServer } from "./appoloServer";
+import { expressServer  }from './expressServer';
 
-import express from 'express';
+const startupErrorExitCode = 201;
 
-const app = express();
-const port = 4000;
-
-app.listen(port, () => {
-  console.log(`Express server is running on port ${port}.`);
-});
-
+function startServer()
+{
+  try {
+    startApolloServer(expressServer);
+  } catch (error) {
+    console.log(`Exit: process terminated with code: ${startupErrorExitCode}`); }
+}
