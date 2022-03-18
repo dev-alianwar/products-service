@@ -6,7 +6,7 @@ const startupErrorExitCode = 201;
 function startServer()
 {
   try {
-    startApolloServer(expressServer);
+    startApolloServer(expressServer, "/api/graphql");
   } catch (error) {
     console.log(`Exit: process terminated with code: ${startupErrorExitCode}`); }
 }
