@@ -1,5 +1,10 @@
+
+import { topProducts }  from "../models/Product";
+
 const resolvers = { 
-    topProducts: () => { return []}
+    Query: {
+        topProducts
+    }
 }
 
 

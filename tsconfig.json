@@ -4,18 +4,15 @@
     "allowJs": true,
     "module": "commonjs",
     "skipLibCheck": true,
-    "lib": [
-      "ESNext",
-      "DOM" // https://github.com/mtth/avsc/issues/219
-    ],
     "target": "ES2018",
     "sourceMap": true,
     "outDir": "dist",
     "strict": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "moduleResolution": "node",
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {

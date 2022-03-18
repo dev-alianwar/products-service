@@ -11,9 +11,7 @@ export interface ApolloContext {
 
 export const startApolloServer = async (app: Express): Promise<ApolloServer> => {
   const httpServer = http.createServer(app);
-  await graphQL.start();
-
   await new Promise<void>(resolve => httpServer.listen({ port: config.port }, resolve));
-  console.log(`🚀  Server ready at http://${config.host === "0.0.0.0" ? "localhost" : config.host}:${config.port}`);
+  console.log(`🚀  Server ready at ${config.host}:${config.port}`);
   return graphQL;
 };

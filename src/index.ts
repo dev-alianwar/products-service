@@ -10,3 +10,6 @@ function startServer()
   } catch (error) {
     console.log(`Exit: process terminated with code: ${startupErrorExitCode}`); }
 }
+
+
+startServer();

@@ -1,11 +1,16 @@
 import { gql } from 'apollo-server';
 
 const typeDefs = gql`
-extend type Query {
-  topProducts(first: Int = 5): [Product]
+type Query {
+  topProducts: [Product]
 }
 
-type Product @key(fields: "upc") {
+type Category{
+  id: String!
+  name: String!
+}
+
+type Product{
   upc: String!
   name: String!
   price: Int
