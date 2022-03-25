@@ -1,8 +1,14 @@
 import { gql } from 'apollo-server';
 
 const typeDefs = gql`
+input productFilters{
+  id: String,
+  title: String,
+  price: Float
+}
+
 type Query {
-  topProducts: [Product]
+  topProducts(args:productFilters): [Product]
 }
 
 type Category{
@@ -11,9 +17,11 @@ type Category{
 }
 
 type Product{
-  upc: String!
-  name: String!
-  price: Int
+    id: String,
+    title: String,
+    price: Float,
+    productCode: String,
+    expiryDate: String,
 }`;
 
 

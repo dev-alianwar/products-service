@@ -2,19 +2,27 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const apollo_server_1 = require("apollo-server");
 const typeDefs = (0, apollo_server_1.gql) `
-extend type Query {
-  topProducts(first: Int = 5): [Product]
+type input productInput{
+  id: String,
+  title: String,
+  price: Float
 }
 
-type Category @key(fields: "id") {
+type Query {
+  topProducts(input:productInput ): [Product]
+}
+
+type Category{
   id: String!
   name: String!
 }
 
-type Product @key(fields: "upc") {
-  upc: String!
-  name: String!
-  price: Int
+type Product{
+    id: String,
+    title: String,
+    price: Float,
+    productCode: String,
+    expiryDate: String,
 }`;
 exports.default = typeDefs;
 //# sourceMappingURL=schema.js.map

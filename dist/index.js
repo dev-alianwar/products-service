@@ -5,10 +5,11 @@ const expressServer_1 = require("./expressServer");
 const startupErrorExitCode = 201;
 function startServer() {
     try {
-        (0, appoloServer_1.startApolloServer)(expressServer_1.expressServer);
+        (0, appoloServer_1.startApolloServer)(expressServer_1.expressServer, "/api/graphql");
     }
     catch (error) {
         console.log(`Exit: process terminated with code: ${startupErrorExitCode}`);
     }
 }
+startServer();
 //# sourceMappingURL=index.js.map
