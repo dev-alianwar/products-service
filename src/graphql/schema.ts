@@ -7,16 +7,16 @@ input productFilters{
   price: Float
 }
 
-type Query {
+extend type Query {
   topProducts(args:productFilters): [Product]
 }
 
-type Category{
+type Category @key(fields: "id"){
   id: String!
   name: String!
 }
 
-type Product{
+type Product @key(fields: "id"){
     id: String,
     title: String,
     price: Float,
